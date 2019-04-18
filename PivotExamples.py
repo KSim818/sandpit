@@ -11,3 +11,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 titanic = sns.load_dataset('titanic')
+titanic.head()
+titanic.groupby(['sex', 'class'])['survived'].aggregate('mean').unstack()
+
+titanic.groupby(['sex', 'class'])['survived'].aggregate('count').unstack()
